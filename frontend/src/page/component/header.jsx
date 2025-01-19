@@ -8,7 +8,7 @@ function Header() {
   const navigate = useNavigate();
 
   return (
-    <div className="w-full min-h-screen" style={{ margin: 0, padding: 0 }}> 
+    <div className="w-full" style={{ margin: 0, padding: 0 }}> 
       {/* Navigation Bar */}
       <div
         className="w-screen py-3 flex flex-row-reverse gap-5 pr-5"
@@ -37,7 +37,7 @@ function Header() {
                 alt="Header"
                 style={{
                 width: "100%",
-                height: "auto", // Maintains aspect ratio
+                // height: "auto", // Maintains aspect ratio
                 }}
             />
     </div>

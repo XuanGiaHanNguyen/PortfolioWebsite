@@ -7,7 +7,7 @@ import './index.css';
 function App() {
   return (
     <BrowserRouter>
-      <Header />
+      <Header/>
       <Routes>
         <Route path='/' element={<Landing />} />
       </Routes>
