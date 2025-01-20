@@ -267,69 +267,71 @@ function Landing () {
                     <h2 className="text-5xl font-extrabold text-center mb-8" style={{color: '#626669'}}>
                         Recent Projects
                     </h2>
-                    <div className="flex flex-wrap gap-5 justify-center px-4">
-                        <div className=" text-center flex flex-row rounded-xl bg-white hover:shadow">
-                            <img src={CH} alt="Tide" width="240" height="167" className='rounded-l-xl' style={{ objectFit: 'cover' }}/>
-                            <div className='flex flex-col'>
-                            <p className="pt-4 pb-2 px-10 font-bold text-lg text-xl font-bold">CastleHassle</p>
-                            <p className='mx-5 font-medium'>Thrilling escape-castle themed game.</p>
-                            <div className='flex flex-row px-4 pt-5 pb-5 gap-3 align-center justify-center'>
-                              <div className='px-4 py-1 rounded-full font-bold text-white' style={{backgroundColor: '#78A3C5'}}>Python</div>
-                              <div className='px-4 py-1 rounded-full font-bold text-white' style={{backgroundColor: '#78A3C5'}}>Team-work</div>
-                            </div>
-                            <button className='mx-8 mt-20 py-3 rounded-xl font-bold hover:-translate-y-1 mb-5 hover:shadow transition duration-400' style={{backgroundColor: '#FFF6D7'}} >View More</button>
-                            </div>
-                        </div>
-                        <div className=" text-center flex flex-row rounded-xl bg-white hover:shadow">
-                            <img src={TT} alt="Tide" width="240" height="167" className='rounded-l-xl' style={{ objectFit: 'cover' }}/>
-                            <div className='flex flex-col'>
-                            <p className="pt-4 pb-2 px-10 font-bold text-lg text-xl font-bold">ToastTutor</p>
-                            <p className='mx-8 mb-5 font-medium'>Connecting tutors and students.</p>
-                            <div className=''>
-                              <div className='flex flex-row px-4 pb-2 gap-3 align-center justify-center'>
-                                <div className='px-4 py-1 rounded-full font-bold text-white' style={{backgroundColor: '#78A3C5'}}>Python</div>
-                                <div className='px-4 py-1 rounded-full font-bold text-white' style={{backgroundColor: '#78A3C5'}}>Team-work</div>
-                              </div>
-                              <div className='flex flex-row px-4 gap-3 align-center justify-center'>
-                                <div className='px-4 py-1 rounded-full font-bold text-white' style={{backgroundColor: '#78A3C5'}}>JavaScript</div>
-                                <div className='px-4 py-1 rounded-full font-bold text-white' style={{backgroundColor: '#78A3C5'}}>HTML/CSS</div>
-                              </div>
-                            </div>
-                                <button className='mx-8 mt-16 py-3 rounded-xl font-bold mb-5 hover:-translate-y-1 hover:shadow transition duration-400' style={{backgroundColor: '#FFF6D7'}} >View More</button>
-                            </div>
-                        </div>
-                      </div>
-                    <div className="flex flex-wrap gap-5 justify-center px-4 pt-6">
-                      <div className=" text-center flex flex-row rounded-xl bg-white hover:shadow">
-                            <img src={MM} alt="Tide" width="240" height="167" className='rounded-l-xl' style={{ objectFit: 'cover' }}/>
-                            <div className='flex flex-col'>
-                            <p className="pt-4 pb-2 px-10 font-bold text-lg text-xl font-bold">MeowMentum</p>
-                            <p className='mx-14 font-medium'>Your productivity bestfriend.</p>
-                            <div className='flex flex-row px-4 pt-5 pb-5 gap-3 align-center justify-center'>
-                              <div className='px-4 py-1 rounded-full font-bold text-white' style={{backgroundColor: '#78A3C5'}}>JavaScript</div>
-                              <div className='px-4 py-1 rounded-full font-bold text-white' style={{backgroundColor: '#78A3C5'}}>HTML/CSS</div>
-                            </div>
-                            <button className='mx-8 mt-20 py-3 rounded-xl font-bold hover:-translate-y-1 mb-5 hover:shadow transition duration-400' style={{backgroundColor: '#FFF6D7'}} >View More</button>
-                            </div>
-                        </div>
-                        <div className=" text-center flex flex-row rounded-xl bg-white hover:shadow">
-                            <img src={car} alt="Tide" width="240" height="167" className='rounded-l-xl' style={{ objectFit: 'cover' }}/>
-                            <div className='flex flex-col'>
-                            <p className="pt-4 pb-2 px-10 font-bold text-lg text-xl font-bold">Fennech The Car</p>
-                            <p className='mx-12 font-medium'>Object-following Arduino Car</p>
-                            <div className='flex flex-row px-4 pt-5 pb-5 gap-3 align-center justify-center'>
-                              <div className='px-4 py-1 rounded-full font-bold text-white' style={{backgroundColor: '#78A3C5'}}>C++</div>
-                              <div className='px-4 py-1 rounded-full font-bold text-white' style={{backgroundColor: '#78A3C5'}}>Teamwork</div>
-                            </div>
-                            <button className='mx-8 mt-20 py-3 rounded-xl font-bold hover:-translate-y-1 mb-5 hover:shadow transition duration-400' style={{backgroundColor: '#FFF6D7'}} >View More</button>
-                            </div>
-                        </div>
-                        
-                    </div> 
+                    <div className="flex flex-wrap gap-4 justify-center px-4">
+        <div className="text-center flex flex-row rounded-xl bg-white hover:shadow">
+          <img src={CH} alt="Tide" width="200" height="140" className='rounded-l-xl' style={{ objectFit: 'cover' }}/>
+          <div className='flex flex-col'>
+            <p className="pt-3 pb-1 px-8 text-lg font-bold">CastleHassle</p>
+            <p className='mx-4 text-sm font-medium'>Thrilling escape-castle themed game.</p>
+            <div className='flex flex-row px-3 pt-3 pb-3 gap-2 align-center justify-center'>
+              <div className='px-3 py-1 rounded-full text-sm font-bold text-white' style={{backgroundColor: '#78A3C5'}}>Python</div>
+              <div className='px-3 py-1 rounded-full text-sm font-bold text-white' style={{backgroundColor: '#78A3C5'}}>Team-work</div>
+            </div>
+            <button className='mx-6 mt-12 py-2 rounded-xl font-bold hover:-translate-y-1 mb-4 hover:shadow transition duration-400' style={{backgroundColor: '#FFF6D7'}} >View More</button>
+          </div>
+        </div>
+
+        <div className="text-center flex flex-row rounded-xl bg-white hover:shadow">
+          <img src={TT} alt="Tide" width="200" height="140" className='rounded-l-xl' style={{ objectFit: 'cover' }}/>
+          <div className='flex flex-col'>
+            <p className="pt-3 pb-1 px-8 text-lg font-bold">ToastTutor</p>
+            <p className='mx-6 mb-3 text-sm font-medium'>Connecting tutors and students.</p>
+            <div className=''>
+              <div className='flex flex-row px-3 pb-2 gap-2 align-center justify-center'>
+                <div className='px-3 py-1 rounded-full text-sm font-bold text-white' style={{backgroundColor: '#78A3C5'}}>Python</div>
+                <div className='px-3 py-1 rounded-full text-sm font-bold text-white' style={{backgroundColor: '#78A3C5'}}>Team-work</div>
+              </div>
+              <div className='flex flex-row px-3 gap-2 align-center justify-center'>
+                <div className='px-3 py-1 rounded-full text-sm font-bold text-white' style={{backgroundColor: '#78A3C5'}}>JavaScript</div>
+                <div className='px-3 py-1 rounded-full text-sm font-bold text-white' style={{backgroundColor: '#78A3C5'}}>HTML/CSS</div>
+              </div>
+            </div>
+            <button className='mx-6 mt-8 py-2 rounded-xl font-bold mb-4 hover:-translate-y-1 hover:shadow transition duration-400' style={{backgroundColor: '#FFF6D7'}} >View More</button>
+          </div>
+        </div>
+      </div>
+
+      <div className="flex flex-wrap gap-4 justify-center px-4 pt-4">
+        <div className="text-center flex flex-row rounded-xl bg-white hover:shadow">
+          <img src={MM} alt="Tide" width="200" height="140" className='rounded-l-xl' style={{ objectFit: 'cover' }}/>
+          <div className='flex flex-col'>
+            <p className="pt-3 pb-1 px-8 text-lg font-bold">MeowMentum</p>
+            <p className='mx-12 text-sm font-medium'>Your productivity bestfriend.</p>
+            <div className='flex flex-row px-3 pt-3 pb-3 gap-2 align-center justify-center'>
+              <div className='px-3 py-1 rounded-full text-sm font-bold text-white' style={{backgroundColor: '#78A3C5'}}>JavaScript</div>
+              <div className='px-3 py-1 rounded-full text-sm font-bold text-white' style={{backgroundColor: '#78A3C5'}}>HTML/CSS</div>
+            </div>
+            <button className='mx-6 mt-12 py-2 rounded-xl font-bold hover:-translate-y-1 mb-4 hover:shadow transition duration-400' style={{backgroundColor: '#FFF6D7'}} >View More</button>
+          </div>
+        </div>
+
+        <div className="text-center flex flex-row rounded-xl bg-white hover:shadow">
+          <img src={car} alt="Tide" width="200" height="140" className='rounded-l-xl' style={{ objectFit: 'cover' }}/>
+          <div className='flex flex-col'>
+            <p className="pt-3 pb-1 px-8 text-lg font-bold">Fennech The Car</p>
+            <p className='mx-9 text-sm font-medium'>Object-following Arduino Car</p>
+            <div className='flex flex-row px-3 pt-3 pb-3 gap-2 align-center justify-center'>
+              <div className='px-3 py-1 rounded-full text-sm font-bold text-white' style={{backgroundColor: '#78A3C5'}}>C++</div>
+              <div className='px-3 py-1 rounded-full text-sm font-bold text-white' style={{backgroundColor: '#78A3C5'}}>Teamwork</div>
+            </div>
+            <button className='mx-6 mt-12 py-2 rounded-xl font-bold hover:-translate-y-1 mb-4 hover:shadow transition duration-400' style={{backgroundColor: '#FFF6D7'}} >View More</button>
+          </div>
+        </div>
+      </div>
                 </section>
 
                 <section id="Technologies" className="mt-16 mb-24">
-                    <h2 className="text-5xl font-extrabold text-center mb-5">
+                    <h2 className="text-5xl font-extrabold text-center">
                         Technologies
                     </h2>
                     <div className="relative w-full max-w-6xl mx-auto">
