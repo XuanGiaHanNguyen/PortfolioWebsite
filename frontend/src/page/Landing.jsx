@@ -1,4 +1,6 @@
 import React from 'react';
+import {useState, useEffect, useRef} from 'react'
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import '../index.css';
 import { Link } from 'react-router-dom';
 import PFP from '../assets/PFP.png';
@@ -17,16 +19,94 @@ import TT from '../assets/projects/TT.png';
 
 
 function Landing () {
-    return(
 
+    const scrollContainerRef = useRef(null);
+
+    const scroll = (direction) => {
+      const container = scrollContainerRef.current;
+      const scrollAmount = 400; // Adjust this value to control scroll distance
+      
+      if (container) {
+        const targetScroll = container.scrollLeft + (direction === 'left' ? -scrollAmount : scrollAmount);
+        container.scrollTo({
+          left: targetScroll,
+          behavior: 'smooth'
+        });
+      }
+    };
+
+        const experiences = [
+          {
+            period: "November 2021 – May 2023",
+            details: [
+              {
+                icon: "🖥️",
+                text: "Started my programming journey with Python"
+              },
+              {
+                icon: "🌐",
+                text: "Joined NHH IT Club, collaborated with teammates to create a design for school annual poster using Figma."
+              },
+              {
+                icon: "🎨",
+                text: "Proficently used Blender to model and build an eco-friendly smarthome."
+              }
+            ]
+          },
+          {
+            period: "May 2023 – August 2024",
+            details: [
+              {
+                icon: "🏆",
+                text: "Proficent in Python, started learning basic Data Structure and Algorithm."
+              },
+              {
+                icon: "⚙️",
+                text: "Mastered Microsoft Office skill, advance in PowerPoint and Word."
+              }
+            ]
+          },
+          {
+            period: "Auguest 2024 – December 2024",
+            details: [
+              {
+                icon: "🖥️",
+                text: "Started exploring web development, focusing on front-end creation using HTML, CSS."
+              },
+              {
+                icon: "🏆",
+                text: "Exploring branch of Computer Science, particularly Al and Machine learning..."
+              }
+            ]
+          },
+          {
+            period: "December 2024 – Present",
+            details: [
+              {
+                icon: "⚙️",
+                text: "Currently discovering the world of JavaScript, MERN stack and backend developement with Python."
+              },
+              {
+                icon: "🌐",
+                text: "Started working in Computer Science Team for SASE-USE, SWE Committee Member for the USF Engineering Expo. "
+              },
+              {
+                icon: "🎨",
+                text: "Working on two group projects: MeowMentum, ToastTutor"
+              }
+            ]
+          }
+        ];
+
+    return(
         <div className='w-full' 
         style={{backgroundColor: '#FFF7EB'}}>
              <div className="max-w-[1920px] mx-auto">
                 <section id="About Me" className="pt-16">
-                <Link className="text-gray-500 font-black flex items-stretch px-12 gap-2">
+                <Link className="text-gray-500 font-black flex items-stretch px-16 gap-2">
                     {/* Vertical Heading */}
                     <h2 
-                        className="text-5xl font-black flex items-center justify-center" 
+                        className="text-6xl font-black flex items-center justify-center" 
                         style={{
                         writingMode: 'vertical-rl', // Makes the text vertical
                         transform: 'rotate(180deg)', // Rotates the text for proper direction
@@ -42,7 +122,7 @@ function Landing () {
                     <div 
                         className="py-8 px-8 text-xl font-bold bg-white rounded-xl hover:-translate-y-1 hover:shadow transition  duration-400"
                         style={{
-                        backgroundColor: '#e8e8e8',
+                        backgroundColor: '#f0f0f0',
                         margin: 0, // Ensures no margin between h2 and textbox
                         }}
                     >
@@ -57,22 +137,73 @@ function Landing () {
                         </p>
                     </div>
                     <div>
-                        <img src={PFP} alt="meee" width="700"/>
+                        <img src={PFP} alt="meee" width="900"/>
                     </div>
                     </Link>
                 </section>
 
-                <section id="Experience" className="mt-7">
-                    <h2 className="text-5xl font-extrabold text-center my-7">
-                        Experience
-                    </h2>
-                    <div className="mx-4 md:mx-24 py-10 px-10 text-lg font-semibold bg-white rounded-xl hover:-translate-y-1 hover:shadow transition duration-400">
-                        
+                <section id="Experience" className="mt-12">
+                    <div className="mx-2 md:mx-16 py-9 px-10 text-lg font-semibold bg-white rounded-xl" style={{backgroundColor: '#e4edf2'}}>
+                        <h2 className="text-5xl font-black flex items-center justify-center text-gray-500 bg-white rounded-xl py-2 mb-10" >
+                            Experience
+                        </h2>
+                        {/* Timeline container with navigation */}
+      <div className="relative">
+        {/* Navigation buttons */}
+        <button 
+          onClick={() => scroll('left')}
+          className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 transition-colors"
+        >
+          <ChevronLeft className="w-8 h-8" />
+        </button>
+        
+        <button 
+          onClick={() => scroll('right')}
+          className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 transition-colors"
+        >
+          <ChevronRight className="w-8 h-8" />
+        </button>
+
+        {/* Timeline content */}
+        <div 
+          ref={scrollContainerRef}
+          className="overflow-hidden pb-8"
+        >
+          {/* Horizontal line */}
+          <div className="absolute top-8 left-0 w-full h-0.5 bg-gray-300"></div>
+          
+          <div className="flex gap-8 min-w-max px-16"> {/* Added px-12 to make space for buttons */}
+            {experiences.map((exp, index) => (
+              <div key={index} className="relative w-80">
+                {/* Timeline dot */}
+                <div className="absolute top-8 left-1/2 w-4 h-4 bg-gray-600 rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
+                
+                {/* Date */}
+                <div className="text-center mb-10 -mt-1 font-medium text-gray-600">
+                  {exp.period}
+                </div>
+                
+                {/* Content card */}
+                <div className="bg-white rounded-lg p-6 shadow-md">
+                  {exp.details.map((detail, detailIndex) => (
+                    <div key={detailIndex} className="mb-4 last:mb-0">
+                      <div className="flex items-start gap-3">
+                        <span className="text-xl">{detail.icon}</span>
+                        <p className="text-gray-700 text-sm">{detail.text}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div> 
                     </div>
                 </section>
 
-                <section id="Projects" className="mt-20">
-                    <h2 className="text-5xl font-extrabold text-center mb-10">
+                <section id="Projects" className="mt-16 pb-14 pt-10" style={{backgroundColor: '#FFECCF'}}>
+                    <h2 className="text-5xl font-extrabold text-center mb-10" style={{color: '#626669'}}>
                         Recent Projects
                     </h2>
                     <div className="flex flex-wrap gap-5 justify-center px-4">
@@ -96,7 +227,7 @@ function Landing () {
                 </section>
 
                 <section id="Technologies" className="mt-16 mb-24">
-                    <h2 className="text-5xl font-extrabold text-center">
+                    <h2 className="text-5xl font-extrabold text-center mb-10">
                         Technologies
                     </h2>
                     <div className="flex flex-wrap gap-4 justify-center my-8 px-4">
