@@ -1,5 +1,5 @@
 import React from 'react';
-import {useRef} from 'react'
+import {useRef, useState, useEffect} from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import '../index.css';
 import { Link } from 'react-router-dom';
@@ -11,6 +11,13 @@ import CSS from '../assets/logo/CSS.png';
 import HTML from '../assets/logo/HTML.png';
 import JS from '../assets/logo/JS.png';
 import Python from '../assets/logo/Python.png';
+import Django from '../assets/logo/Django.png';
+import Figma from '../assets/logo/Figma.png';
+import GitHub from '../assets/logo/GitHub.png';
+import MS from '../assets/logo/MS.png';
+import PostgreSQL from '../assets/logo/PostgreSQL.png';
+import react from '../assets/logo/react.png';
+
 
 import car from '../assets/projects/car.jpg';
 import CH from '../assets/projects/CH.png';
@@ -21,14 +28,54 @@ import TT from '../assets/projects/TT.png';
 function Landing () {
 
     const carouselRef = useRef(null);
+    const [showLeftButton, setShowLeftButton] = useState(false);
+    const [showRightButton, setShowRightButton] = useState(true);
 
+    const techStack = [
+      { name: 'Python', imgSrc: Python },
+      { name: 'JavaScript', imgSrc:JS },
+      { name: 'HTML', imgSrc:HTML },
+      { name: 'CSS', imgSrc:CSS, },
+      { name: 'C++', imgSrc: Cee },
+      { name: 'Django', imgSrc: Django },
+      { name: 'React', imgSrc: react },
+      { name: 'Figma', imgSrc:Figma },
+      { name: 'GitHub', imgSrc:GitHub },
+      { name: 'PostgreSQL', imgSrc:PostgreSQL },
+      { name: 'Microsoft', imgSrc: MS }
+    ]
+
+    const checkScrollButtons = () => {
+      if (carouselRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
+        setShowLeftButton(scrollLeft > 0);
+        setShowRightButton(scrollLeft < scrollWidth - clientWidth - 10);
+      }
+    };
+  
+    useEffect(() => {
+      const carousel = carouselRef.current;
+      if (carousel) {
+        carousel.addEventListener('scroll', checkScrollButtons);
+        // Initial check
+        checkScrollButtons();
+      }
+      return () => {
+        if (carousel) {
+          carousel.removeEventListener('scroll', checkScrollButtons);
+        }
+      };
+    }, []);
+  
     const handleScrollClick = (direction) => {
       const container = carouselRef.current;
-      const scrollAmount = 300; // Adjust this value to control scroll distance
-      
       if (container) {
-        container.scrollBy({
-          left: direction === 'left' ? -scrollAmount : scrollAmount,
+        const cardWidth = 220; // Width of card (112px) + padding + gap
+        const scrollAmount = cardWidth * 3; // Scroll 3 cards at a time
+        const targetScroll = container.scrollLeft + (direction === 'left' ? -scrollAmount : scrollAmount);
+        
+        container.scrollTo({
+          left: targetScroll,
           behavior: 'smooth'
         });
       }
@@ -286,49 +333,52 @@ function Landing () {
                         Technologies
                     </h2>
                     <div className="relative w-full max-w-6xl mx-auto">
-                    {/* Navigation Buttons */}
-                    <button 
-                      onClick={() => handleScrollClick('left')}
-                      className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 mx-16"
-                    >
-                      <ChevronLeft className="w-6 h-6" />
-                    </button>
-                    
-                    <button 
-                      onClick={() => handleScrollClick('right')}
-                      className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 mx-16"
-                    >
-                      <ChevronRight className="w-6 h-6" />
-                    </button>
-
-                    {/* Carousel Container */}
-                    <div 
-                      ref={carouselRef}
-                      className="flex overflow-x-hidden scroll-smooth gap-4 py-8 px-12 mx-16"
-                    >
-                      {/* Language Cards */}
-                      {[
-                        { name: 'Python', imgSrc: '/api/placeholder/110/110' },
-                        { name: 'JavaScript', imgSrc: '/api/placeholder/118/110' },
-                        { name: 'HTML', imgSrc: '/api/placeholder/120/90' },
-                        { name: 'CSS', imgSrc: '/api/placeholder/107/110' },
-                        { name: 'C++', imgSrc: '/api/placeholder/108/110' },
-                        // Duplicate entries for demonstration
-                      ].map((lang, index) => (
-                        <div
-                          key={index}
-                          className="flex-none px-7 py-4 bg-white rounded-xl hover:scale-105 hover:shadow transition-all"
+                      {/* Left Navigation Button */}
+                      {showLeftButton && (
+                        <button
+                          onClick={() => handleScrollClick('left')}
+                          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 mx-16"
+                          aria-label="Scroll left"
                         >
-                          <img 
-                            src={lang.imgSrc} 
-                            alt={`${lang.name} icon`}
-                            className="w-28 h-28 object-contain"
-                          />
-                          <p className="mt-2 font-bold text-lg text-center">{lang.name}</p>
-                        </div>
-                      ))}
+                          <ChevronLeft className="w-6 h-6" />
+                        </button>
+                      )}
+
+                      {/* Right Navigation Button */}
+                      {showRightButton && (
+                        <button
+                          onClick={() => handleScrollClick('right')}
+                          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 mx-16"
+                          aria-label="Scroll right"
+                        >
+                          <ChevronRight className="w-6 h-6" />
+                        </button>
+                      )}
+
+                      {/* Carousel Container */}
+                      <div
+                        ref={carouselRef}
+                        className="flex overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory gap-4 py-8 px-8 mx-20"
+                        style={{
+                          msOverflowStyle: 'none',
+                          scrollbarWidth: 'none',
+                        }}
+                      >
+                        {techStack.map((tech, index) => (
+                          <div
+                            key={index}
+                            className="flex-none w-40 snap-start px-6 py-4 bg-white rounded-xl hover:scale-105 hover:shadow-lg transition-all duration-200"
+                          >
+                            <img
+                              src={tech.imgSrc}
+                              alt={`${tech.name} icon`}
+                              className="w-32 h-32 object-contain"
+                            />
+                            <p className="mt-2 font-bold text-lg text-center">{tech.name}</p>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                  </div>
                 </section>
         </div>
     </div>
