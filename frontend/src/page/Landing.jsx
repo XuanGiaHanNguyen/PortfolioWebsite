@@ -1,5 +1,5 @@
 import React from 'react';
-import {useState, useEffect, useRef} from 'react'
+import {useRef} from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import '../index.css';
 import { Link } from 'react-router-dom';
@@ -20,6 +20,20 @@ import TT from '../assets/projects/TT.png';
 
 function Landing () {
 
+    const carouselRef = useRef(null);
+
+    const handleScrollClick = (direction) => {
+      const container = carouselRef.current;
+      const scrollAmount = 300; // Adjust this value to control scroll distance
+      
+      if (container) {
+        container.scrollBy({
+          left: direction === 'left' ? -scrollAmount : scrollAmount,
+          behavior: 'smooth'
+        });
+      }
+    };
+  
     const scrollContainerRef = useRef(null);
 
     const scroll = (direction) => {
@@ -179,7 +193,7 @@ function Landing () {
                 <div className="absolute top-8 left-1/2 w-4 h-4 bg-gray-600 rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
                 
                 {/* Date */}
-                <div className="text-center mb-10 -mt-1 font-medium text-gray-600">
+                <div className="text-center mb-10 -mt-1 font-semibold text-gray-600">
                   {exp.period}
                 </div>
                 
@@ -188,7 +202,7 @@ function Landing () {
                   {exp.details.map((detail, detailIndex) => (
                     <div key={detailIndex} className="mb-4 last:mb-0">
                       <div className="flex items-start gap-3">
-                        <span className="text-xl">{detail.icon}</span>
+                        <span className="text-xl font-semibold">{detail.icon}</span>
                         <p className="text-gray-700 text-sm">{detail.text}</p>
                       </div>
                     </div>
@@ -203,55 +217,118 @@ function Landing () {
                 </section>
 
                 <section id="Projects" className="mt-16 pb-14 pt-10" style={{backgroundColor: '#FFECCF'}}>
-                    <h2 className="text-5xl font-extrabold text-center mb-10" style={{color: '#626669'}}>
+                    <h2 className="text-5xl font-extrabold text-center mb-8" style={{color: '#626669'}}>
                         Recent Projects
                     </h2>
                     <div className="flex flex-wrap gap-5 justify-center px-4">
-                        <Link className="px-9 py-10 text-center rounded-xl bg-white hover:scale-105 hover:shadow">
-                            <p className="pb-3 font-bold text-lg">CastleHassle</p>
-                            <img src={CH} alt="Tide" width="167" height="167" />
-                        </Link>
-                        <Link className="px-9 py-10 text-center rounded-xl bg-white hover:scale-105 hover:shadow">
-                            <p className="pb-3 font-bold text-lg">ToastTutor</p>
-                            <img src={TT} alt="Tide" width="170" height="170" />
-                        </Link>
-                        <Link className="px-9 py-10 text-center rounded-xl bg-white hover:scale-105 hover:shadow">
-                            <p className="pb-3 font-bold text-lg">MeowMentum</p>
-                            <img src={MM} alt="Tide" width="170" height="170" />
-                        </Link>
-                        <Link className="px-9 py-10 text-center rounded-xl bg-white hover:scale-105 hover:shadow">
-                            <p className="pb-3 font-bold text-lg">Fennec the Car</p>
-                            <img src={car} alt="Tide" width="170" height="170" />
-                        </Link>
+                        <div className=" text-center flex flex-row rounded-xl bg-white hover:shadow">
+                            <img src={CH} alt="Tide" width="240" height="167" className='rounded-l-xl' style={{ objectFit: 'cover' }}/>
+                            <div className='flex flex-col'>
+                            <p className="pt-4 pb-2 px-10 font-bold text-lg text-xl font-bold">CastleHassle</p>
+                            <p className='mx-5 font-medium'>Thrilling escape-castle themed game.</p>
+                            <div className='flex flex-row px-4 pt-5 pb-5 gap-3 align-center justify-center'>
+                              <div className='px-4 py-1 rounded-full font-bold text-white' style={{backgroundColor: '#78A3C5'}}>Python</div>
+                              <div className='px-4 py-1 rounded-full font-bold text-white' style={{backgroundColor: '#78A3C5'}}>Team-work</div>
+                            </div>
+                            <button className='mx-8 mt-20 py-3 rounded-xl font-bold hover:-translate-y-1 mb-5 hover:shadow transition duration-400' style={{backgroundColor: '#FFF6D7'}} >View More</button>
+                            </div>
+                        </div>
+                        <div className=" text-center flex flex-row rounded-xl bg-white hover:shadow">
+                            <img src={TT} alt="Tide" width="240" height="167" className='rounded-l-xl' style={{ objectFit: 'cover' }}/>
+                            <div className='flex flex-col'>
+                            <p className="pt-4 pb-2 px-10 font-bold text-lg text-xl font-bold">ToastTutor</p>
+                            <p className='mx-8 mb-5 font-medium'>Connecting tutors and students.</p>
+                            <div className=''>
+                              <div className='flex flex-row px-4 pb-2 gap-3 align-center justify-center'>
+                                <div className='px-4 py-1 rounded-full font-bold text-white' style={{backgroundColor: '#78A3C5'}}>Python</div>
+                                <div className='px-4 py-1 rounded-full font-bold text-white' style={{backgroundColor: '#78A3C5'}}>Team-work</div>
+                              </div>
+                              <div className='flex flex-row px-4 gap-3 align-center justify-center'>
+                                <div className='px-4 py-1 rounded-full font-bold text-white' style={{backgroundColor: '#78A3C5'}}>JavaScript</div>
+                                <div className='px-4 py-1 rounded-full font-bold text-white' style={{backgroundColor: '#78A3C5'}}>HTML/CSS</div>
+                              </div>
+                            </div>
+                                <button className='mx-8 mt-16 py-3 rounded-xl font-bold mb-5 hover:-translate-y-1 hover:shadow transition duration-400' style={{backgroundColor: '#FFF6D7'}} >View More</button>
+                            </div>
+                        </div>
+                      </div>
+                    <div className="flex flex-wrap gap-5 justify-center px-4 pt-6">
+                      <div className=" text-center flex flex-row rounded-xl bg-white hover:shadow">
+                            <img src={MM} alt="Tide" width="240" height="167" className='rounded-l-xl' style={{ objectFit: 'cover' }}/>
+                            <div className='flex flex-col'>
+                            <p className="pt-4 pb-2 px-10 font-bold text-lg text-xl font-bold">MeowMentum</p>
+                            <p className='mx-14 font-medium'>Your productivity bestfriend.</p>
+                            <div className='flex flex-row px-4 pt-5 pb-5 gap-3 align-center justify-center'>
+                              <div className='px-4 py-1 rounded-full font-bold text-white' style={{backgroundColor: '#78A3C5'}}>JavaScript</div>
+                              <div className='px-4 py-1 rounded-full font-bold text-white' style={{backgroundColor: '#78A3C5'}}>HTML/CSS</div>
+                            </div>
+                            <button className='mx-8 mt-20 py-3 rounded-xl font-bold hover:-translate-y-1 mb-5 hover:shadow transition duration-400' style={{backgroundColor: '#FFF6D7'}} >View More</button>
+                            </div>
+                        </div>
+                        <div className=" text-center flex flex-row rounded-xl bg-white hover:shadow">
+                            <img src={car} alt="Tide" width="240" height="167" className='rounded-l-xl' style={{ objectFit: 'cover' }}/>
+                            <div className='flex flex-col'>
+                            <p className="pt-4 pb-2 px-10 font-bold text-lg text-xl font-bold">Fennech The Car</p>
+                            <p className='mx-12 font-medium'>Object-following Arduino Car</p>
+                            <div className='flex flex-row px-4 pt-5 pb-5 gap-3 align-center justify-center'>
+                              <div className='px-4 py-1 rounded-full font-bold text-white' style={{backgroundColor: '#78A3C5'}}>C++</div>
+                              <div className='px-4 py-1 rounded-full font-bold text-white' style={{backgroundColor: '#78A3C5'}}>Teamwork</div>
+                            </div>
+                            <button className='mx-8 mt-20 py-3 rounded-xl font-bold hover:-translate-y-1 mb-5 hover:shadow transition duration-400' style={{backgroundColor: '#FFF6D7'}} >View More</button>
+                            </div>
+                        </div>
+                        
                     </div> 
                 </section>
 
                 <section id="Technologies" className="mt-16 mb-24">
-                    <h2 className="text-5xl font-extrabold text-center mb-10">
+                    <h2 className="text-5xl font-extrabold text-center mb-5">
                         Technologies
                     </h2>
-                    <div className="flex flex-wrap gap-4 justify-center my-8 px-4">
-                        <Link className="px-11 py-10 text-center bg-white rounded-xl hover:scale-105 hover:shadow">
-                            <img src={Python} alt="python icon" width="110"/>
-                            <p className="mt-2 font-bold text-lg">Python</p>
-                        </Link>
-                        <Link className="px-9 py-10 text-center bg-white rounded-xl hover:scale-105 hover:shadow">
-                            <img src={JS} alt="java icon" width="118"/>
-                            <p className="mt-2 font-bold text-lg">JavaScript</p>
-                        </Link>
-                        <Link className="px-9 py-10 text-center bg-white rounded-xl hover:scale-105 hover:shadow">
-                            <img src={HTML} alt="python icon" width="120" height="90"/>
-                            <p className="mt-2 font-bold text-lg">HTML</p>
-                        </Link>
-                        <Link className="px-10 py-10 text-center bg-white rounded-xl hover:scale-105 hover:shadow">
-                            <img src={CSS} alt="python icon" width="107"/>
-                            <p className="mt-2 font-bold text-lg">CSS</p>
-                        </Link>
-                        <Link className="px-10 py-10 text-center bg-white rounded-xl hover:scale-105 hover:shadow">
-                            <img src={Cee} alt="python icon" width="108"/>
-                            <p className="mt-2 font-bold text-lg">C++</p>
-                        </Link>
+                    <div className="relative w-full max-w-6xl mx-auto">
+                    {/* Navigation Buttons */}
+                    <button 
+                      onClick={() => handleScrollClick('left')}
+                      className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 mx-16"
+                    >
+                      <ChevronLeft className="w-6 h-6" />
+                    </button>
+                    
+                    <button 
+                      onClick={() => handleScrollClick('right')}
+                      className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 mx-16"
+                    >
+                      <ChevronRight className="w-6 h-6" />
+                    </button>
+
+                    {/* Carousel Container */}
+                    <div 
+                      ref={carouselRef}
+                      className="flex overflow-x-hidden scroll-smooth gap-4 py-8 px-12 mx-16"
+                    >
+                      {/* Language Cards */}
+                      {[
+                        { name: 'Python', imgSrc: '/api/placeholder/110/110' },
+                        { name: 'JavaScript', imgSrc: '/api/placeholder/118/110' },
+                        { name: 'HTML', imgSrc: '/api/placeholder/120/90' },
+                        { name: 'CSS', imgSrc: '/api/placeholder/107/110' },
+                        { name: 'C++', imgSrc: '/api/placeholder/108/110' },
+                        // Duplicate entries for demonstration
+                      ].map((lang, index) => (
+                        <div
+                          key={index}
+                          className="flex-none px-7 py-4 bg-white rounded-xl hover:scale-105 hover:shadow transition-all"
+                        >
+                          <img 
+                            src={lang.imgSrc} 
+                            alt={`${lang.name} icon`}
+                            className="w-28 h-28 object-contain"
+                          />
+                          <p className="mt-2 font-bold text-lg text-center">{lang.name}</p>
+                        </div>
+                      ))}
                     </div>
+                  </div>
                 </section>
         </div>
     </div>
