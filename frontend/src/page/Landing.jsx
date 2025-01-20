@@ -4,7 +4,8 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import '../index.css';
 import { Link } from 'react-router-dom';
 import PFP from '../assets/PFP.png';
-import {QuoteIcon} from '../assets/icon'
+import {QuoteIcon, LinkedInIcon, FaceBookIcon, GitHubIcon} from '../assets/icon'
+import {ComputerIcon, UsersIcon, AwardIcon, SettingsIcon, GlobeIcon} from '../assets/icon'
 
 import Cee from '../assets/logo/Cee.png';
 import CSS from '../assets/logo/CSS.png';
@@ -17,7 +18,6 @@ import GitHub from '../assets/logo/GitHub.png';
 import MS from '../assets/logo/MS.png';
 import PostgreSQL from '../assets/logo/PostgreSQL.png';
 import react from '../assets/logo/react.png';
-
 
 import car from '../assets/projects/car.jpg';
 import CH from '../assets/projects/CH.png';
@@ -101,15 +101,15 @@ function Landing () {
             period: "November 2021 – May 2023",
             details: [
               {
-                icon: "🖥️",
-                text: "Started my programming journey with Python"
+                icon:ComputerIcon ,
+                text: "Started my programming journey with Python."
               },
               {
-                icon: "🌐",
+                icon: UsersIcon,
                 text: "Joined NHH IT Club, collaborated with teammates to create a design for school annual poster using Figma."
               },
               {
-                icon: "🎨",
+                icon: AwardIcon,
                 text: "Proficently used Blender to model and build an eco-friendly smarthome."
               }
             ]
@@ -118,11 +118,11 @@ function Landing () {
             period: "May 2023 – August 2024",
             details: [
               {
-                icon: "🏆",
+                icon: AwardIcon,
                 text: "Proficent in Python, started learning basic Data Structure and Algorithm."
               },
               {
-                icon: "⚙️",
+                icon: SettingsIcon,
                 text: "Mastered Microsoft Office skill, advance in PowerPoint and Word."
               }
             ]
@@ -131,11 +131,11 @@ function Landing () {
             period: "Auguest 2024 – December 2024",
             details: [
               {
-                icon: "🖥️",
+                icon: ComputerIcon,
                 text: "Started exploring web development, focusing on front-end creation using HTML, CSS."
               },
               {
-                icon: "🏆",
+                icon: GlobeIcon,
                 text: "Exploring branch of Computer Science, particularly Al and Machine learning..."
               }
             ]
@@ -144,16 +144,16 @@ function Landing () {
             period: "December 2024 – Present",
             details: [
               {
-                icon: "⚙️",
+                icon: SettingsIcon,
                 text: "Currently discovering the world of JavaScript, MERN stack and backend developement with Python."
               },
               {
-                icon: "🌐",
+                icon: GlobeIcon,
                 text: "Started working in Computer Science Team for SASE-USE, SWE Committee Member for the USF Engineering Expo. "
               },
               {
-                icon: "🎨",
-                text: "Working on two group projects: MeowMentum, ToastTutor"
+                icon: UsersIcon,
+                text: "Working on two group projects: MeowMentum, ToastTutor..."
               }
             ]
           }
@@ -161,18 +161,18 @@ function Landing () {
 
     return(
         <div className='w-full' 
-        style={{backgroundColor: '#FFF7EB'}}>
+        style={{backgroundColor: '#fffaf2'}}>
              <div className="max-w-[1920px] mx-auto">
                 <section id="About Me" className="pt-16">
                 <Link className="text-gray-500 font-black flex items-stretch px-16 gap-2">
                     {/* Vertical Heading */}
                     <h2 
-                        className="text-6xl font-black flex items-center justify-center" 
+                        className="text-6xl font-black flex items-center justify-center hover:text-sky-900 " 
                         style={{
                         writingMode: 'vertical-rl', // Makes the text vertical
                         transform: 'rotate(180deg)', // Rotates the text for proper direction
                         textAlign: 'center',
-                        marginRight: 16, // Center-aligns the vertical text
+                        marginRight: 10, // Center-aligns the vertical text
                         margin: 0,
                         }}
                     >
@@ -181,7 +181,7 @@ function Landing () {
 
                     {/* Textbox */}
                     <div 
-                        className="py-8 px-8 text-xl font-bold bg-white rounded-xl hover:-translate-y-1 hover:shadow transition  duration-400"
+                        className="py-8 px-8 text-xl font-bold bg-white rounded-xl hover:-translate-y-1 hover:shadow transition duration-400"
                         style={{
                         backgroundColor: '#f0f0f0',
                         margin: 0, // Ensures no margin between h2 and textbox
@@ -196,6 +196,11 @@ function Landing () {
                         <p className='hover:scale-102 px-5'>
                         &nbsp;&nbsp;&nbsp;&nbsp; Hi! I'm Han Nguyen, a newbie but ambitious software engineer and full-stack developer who are working to build meaningful projects to connect people around the globe. 
                         </p>
+                        <div className='flex flex-row justify-center mt-4 gap-4'>
+                          <a href='https://www.facebook.com/GiaHan14032006' className='p-1 rounded-lg' onClick={(e) => e.stopPropagation()} target="_blank" rel="noopener noreferrer" style={{backgroundColor: '#78A3C5'}}>{FaceBookIcon}</a>
+                          <a href='https://www.linkedin.com/in/xuangiahannguyen/' className='p-1 rounded-lg' onClick={(e) => e.stopPropagation()} target="_blank" rel="noopener noreferrer" style={{backgroundColor: '#78A3C5'}}>{LinkedInIcon}</a>
+                          <a href='https://github.com/XuanGiaHanNguyen' className='p-1 rounded-lg' onClick={(e) => e.stopPropagation()} target="_blank" rel="noopener noreferrer" style={{backgroundColor: '#78A3C5'}}>{GitHubIcon}</a>
+                        </div>
                     </div>
                     <div>
                         <img src={PFP} alt="meee" width="900"/>
@@ -204,7 +209,7 @@ function Landing () {
                 </section>
 
                 <section id="Experience" className="mt-12">
-                    <div className="mx-2 md:mx-16 py-9 px-10 text-lg font-semibold bg-white rounded-xl" style={{backgroundColor: '#e4edf2'}}>
+                    <div className="mx-2 md:mx-16 py-9 px-10 text-lg font-semibold bg-white rounded-xl hover:-translate-y-1 hover:shadow transition  duration-400" style={{backgroundColor: '#e4edf2'}}>
                         <h2 className="text-5xl font-black flex items-center justify-center text-gray-500 bg-white rounded-xl py-2 mb-10" >
                             Experience
                         </h2>
@@ -237,10 +242,10 @@ function Landing () {
             {experiences.map((exp, index) => (
               <div key={index} className="relative w-80">
                 {/* Timeline dot */}
-                <div className="absolute top-8 left-1/2 w-4 h-4 bg-gray-600 rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
+                <div className="absolute top-8 left-1/2 w-4 h-4 bg-gray-400 rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
                 
                 {/* Date */}
-                <div className="text-center mb-10 -mt-1 font-semibold text-gray-600">
+                <div className="text-center mb-10 -mt-1 font-bold text-gray-500">
                   {exp.period}
                 </div>
                 
@@ -250,7 +255,7 @@ function Landing () {
                     <div key={detailIndex} className="mb-4 last:mb-0">
                       <div className="flex items-start gap-3">
                         <span className="text-xl font-semibold">{detail.icon}</span>
-                        <p className="text-gray-700 text-sm">{detail.text}</p>
+                        <p className="text-gray-500 text-sm font-semibold">{detail.text}</p>
                       </div>
                     </div>
                   ))}
@@ -267,8 +272,8 @@ function Landing () {
                     <h2 className="text-5xl font-extrabold text-center mb-8" style={{color: '#626669'}}>
                         Recent Projects
                     </h2>
-                    <div className="flex flex-wrap gap-4 justify-center px-4">
-        <div className="text-center flex flex-row rounded-xl bg-white hover:shadow">
+                    <div className="flex flex-wrap gap-4 justify-center px-4 ">
+        <div className="text-center flex flex-row rounded-xl bg-white hover:shadow-md hover:-translate-y-1 duration-400 ">
           <img src={CH} alt="Tide" width="200" height="140" className='rounded-l-xl' style={{ objectFit: 'cover' }}/>
           <div className='flex flex-col'>
             <p className="pt-3 pb-1 px-8 text-lg font-bold">CastleHassle</p>
@@ -281,7 +286,7 @@ function Landing () {
           </div>
         </div>
 
-        <div className="text-center flex flex-row rounded-xl bg-white hover:shadow">
+        <div className="text-center flex flex-row rounded-xl bg-white hover:shadow-md hover:-translate-y-1 duration-400 ">
           <img src={TT} alt="Tide" width="200" height="140" className='rounded-l-xl' style={{ objectFit: 'cover' }}/>
           <div className='flex flex-col'>
             <p className="pt-3 pb-1 px-8 text-lg font-bold">ToastTutor</p>
@@ -302,7 +307,7 @@ function Landing () {
       </div>
 
       <div className="flex flex-wrap gap-4 justify-center px-4 pt-4">
-        <div className="text-center flex flex-row rounded-xl bg-white hover:shadow">
+        <div className="text-center flex flex-row rounded-xl bg-white hover:shadow-md hover:-translate-y-1 duration-400 ">
           <img src={MM} alt="Tide" width="200" height="140" className='rounded-l-xl' style={{ objectFit: 'cover' }}/>
           <div className='flex flex-col'>
             <p className="pt-3 pb-1 px-8 text-lg font-bold">MeowMentum</p>
@@ -315,7 +320,7 @@ function Landing () {
           </div>
         </div>
 
-        <div className="text-center flex flex-row rounded-xl bg-white hover:shadow">
+        <div className="text-center flex flex-row rounded-xl bg-white hover:shadow-md hover:-translate-y-1 duration-400 ">
           <img src={car} alt="Tide" width="200" height="140" className='rounded-l-xl' style={{ objectFit: 'cover' }}/>
           <div className='flex flex-col'>
             <p className="pt-3 pb-1 px-8 text-lg font-bold">Fennech The Car</p>
@@ -331,7 +336,7 @@ function Landing () {
                 </section>
 
                 <section id="Technologies" className="mt-16 mb-24">
-                    <h2 className="text-5xl font-extrabold text-center">
+                    <h2 className="text-5xl font-extrabold text-center text-gray-500">
                         Technologies
                     </h2>
                     <div className="relative w-full max-w-6xl mx-auto">
@@ -369,6 +374,7 @@ function Landing () {
                         {techStack.map((tech, index) => (
                           <div
                             key={index}
+                            style={{backgroundColor: '#f0f0f0'}}
                             className="flex-none w-40 snap-start px-6 py-4 bg-white rounded-xl hover:scale-105 hover:shadow-lg transition-all duration-200"
                           >
                             <img
