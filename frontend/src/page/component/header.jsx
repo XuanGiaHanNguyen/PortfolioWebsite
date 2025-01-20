@@ -11,7 +11,7 @@ function Header() {
     <div className="w-full" style={{ margin: 0, padding: 0 }}> 
       {/* Navigation Bar */}
       <div
-        className="w-screen py-3 flex flex-row-reverse gap-5 pr-5"
+        className="w-screen py-3 flex flex-row-reverse gap-5 pr-5 text-lg"
         style={{ backgroundColor: '#728099' }}
       >
         <button onClick={() => navigate("/")}>{MenuIcon}</button>

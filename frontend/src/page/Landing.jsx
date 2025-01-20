@@ -1,5 +1,19 @@
-import React from 'react'
-import '../index.css'
+import React from 'react';
+import '../index.css';
+import { Link } from 'react-router-dom';
+import PFP from '../assets/PFP.png';
+import {QuoteIcon} from '../assets/icon'
+
+import Cee from '../assets/logo/Cee.png';
+import CSS from '../assets/logo/CSS.png';
+import HTML from '../assets/logo/HTML.png';
+import JS from '../assets/logo/JS.png';
+import Python from '../assets/logo/Python.png';
+
+import car from '../assets/projects/car.jpg';
+import CH from '../assets/projects/CH.png';
+import MM from '../assets/projects/MM.png';
+import TT from '../assets/projects/TT.png';
 
 
 function Landing () {
@@ -9,13 +23,42 @@ function Landing () {
         style={{backgroundColor: '#FFF7EB'}}>
              <div className="max-w-[1920px] mx-auto">
                 <section id="About Me" className="pt-16">
-                    <Link className="text-gray-800 font-bold block">
-                        <div className="mx-4 md:mx-24 py-10 px-10 text-lg font-semibold bg-white rounded-xl hover:-translate-y-1 hover:shadow transition duration-400">
-                            <h2 className="text-4xl font-extrabold ml-3 mb-4 mt-1">About Me</h2>
-                            <p>
-                                Hi! I'm Han Nguyen, a Freshman at the University of South Florida majoring in Computer Science. My passion for programming began in high school when my teacher introduced me to Python. Since then, I've committed to exploring the world of programming.  
+                <Link className="text-gray-500 font-black flex items-stretch px-12 gap-2">
+                    {/* Vertical Heading */}
+                    <h2 
+                        className="text-5xl font-black flex items-center justify-center" 
+                        style={{
+                        writingMode: 'vertical-rl', // Makes the text vertical
+                        transform: 'rotate(180deg)', // Rotates the text for proper direction
+                        textAlign: 'center',
+                        marginRight: 16, // Center-aligns the vertical text
+                        margin: 0,
+                        }}
+                    >
+                        About Me
+                    </h2>
+
+                    {/* Textbox */}
+                    <div 
+                        className="py-8 px-8 text-xl font-bold bg-white rounded-xl hover:-translate-y-1 hover:shadow transition  duration-400"
+                        style={{
+                        backgroundColor: '#e8e8e8',
+                        margin: 0, // Ensures no margin between h2 and textbox
+                        }}
+                    >
+                        <div className=' p-3 pt-3 pb-6 mb-5 bg-white flex flex-col rounded-xl'>
+                            <p className='flex justify-center'>{QuoteIcon}</p>
+                            <p className='hover:scale-102 text-center font-black text-grey-900'>
+                            Life is short - let's make everyday count <br /> while we are still here
                             </p>
                         </div>
+                        <p className='hover:scale-102 px-5'>
+                        &nbsp;&nbsp;&nbsp;&nbsp; Hi! I'm Han Nguyen, a newbie but ambitious software engineer and full-stack developer who are working to build meaningful projects to connect people around the globe. 
+                        </p>
+                    </div>
+                    <div>
+                        <img src={PFP} alt="meee" width="700"/>
+                    </div>
                     </Link>
                 </section>
 
