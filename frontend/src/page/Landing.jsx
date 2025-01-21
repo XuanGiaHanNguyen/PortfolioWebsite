@@ -210,7 +210,7 @@ function Landing () {
 
                 <section id="Experience" className="mt-12">
                     <div className="mx-2 md:mx-16 py-9 px-10 text-lg font-semibold bg-white rounded-xl hover:-translate-y-1 hover:shadow transition  duration-400" style={{backgroundColor: '#e4edf2'}}>
-                        <h2 className="text-5xl font-black flex items-center justify-center text-gray-500 bg-white rounded-xl py-2 mb-10" >
+                        <h2 className=" text-5xl font-black flex items-center justify-center text-gray-500 bg-white rounded-xl py-2 mb-10" >
                             Experience
                         </h2>
                         {/* Timeline container with navigation */}
@@ -336,8 +336,8 @@ function Landing () {
                 </section>
 
                 <section id="Technologies" className="mt-16 pb-20">
-                  <div className="mx-2 md:mx-16 py-9 px-10 text-lg font-semibold bg-white rounded-xl hover:-translate-y-1 hover:shadow transition  duration-400" style={{backgroundColor: '#e4edf2'}}>
-                    <h2 className="text-5xl font-extrabold text-center text-gray-500">
+                  <div className="mx-2 md:mx-16 py-9 px-5 text-lg font-semibold bg-white rounded-xl animate-up-down hover:shadow transition" style={{backgroundColor: '#e4edf2'}}>
+                    <h2 className="text-5xl font-extrabold text-center bg-white text-gray-500 mx-10 rounded-xl py-2 ">
                         Technologies
                     </h2>
                     <div className="relative w-full max-w-6xl mx-auto">

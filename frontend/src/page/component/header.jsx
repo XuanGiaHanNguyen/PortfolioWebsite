@@ -15,10 +15,10 @@ function Header() {
         style={{ backgroundColor: '#728099' }}
       >
         <button onClick={() => navigate("/")}>{MenuIcon}</button>
-        <a className="font-bold text-gray-100 group" onClick={() => navigate("/")}>Contact <div class="bg-gray-100 h-[3px] w-0 group-hover:w-full transition-all duration-500"></div></a>
-        <a className="font-bold text-gray-100 group" onClick={() => navigate("/")}>Projects <div class="bg-gray-100 h-[3px] w-0 group-hover:w-full transition-all duration-500"></div></a>
-        <a className="font-bold text-gray-100 group" onClick={() => navigate("/")}>Experience <div class="bg-gray-100 h-[3px] w-0 group-hover:w-full transition-all duration-500"></div></a>
-        <a className="font-bold text-gray-100 group" onClick={() => navigate("/")}>Home <div class="bg-gray-100 h-[3px] w-0 group-hover:w-full transition-all duration-500"></div></a>
+        <a className="font-bold text-gray-100 group" onClick={() => navigate("/")}>Contact <div class="bg-gray-200 h-[3px] w-0 group-hover:w-full transition-all duration-500"></div></a>
+        <a className="font-bold text-gray-100 group" onClick={() => navigate("/")}>Projects <div class="bg-gray-200 h-[3px] w-0 group-hover:w-full transition-all duration-500"></div></a>
+        <a className="font-bold text-gray-100 group" onClick={() => navigate("/")}>Experience <div class="bg-gray-200 h-[3px] w-0 group-hover:w-full transition-all duration-500"></div></a>
+        <a className="font-bold text-gray-100 group" onClick={() => navigate("/")}>Home <div class="bg-gray-200 h-[3px] w-0 group-hover:w-full transition-all duration-500"></div></a>
       </div>
 
       {/* Header Image */}
