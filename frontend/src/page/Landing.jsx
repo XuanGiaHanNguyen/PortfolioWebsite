@@ -167,7 +167,7 @@ function Landing () {
                 <Link className="text-gray-500 font-black flex items-stretch px-16 gap-2">
                     {/* Vertical Heading */}
                     <h2 
-                        className="text-6xl font-black flex items-center justify-center hover:text-sky-900 " 
+                        className="text-6xl font-black flex items-center justify-center hover:text-sky-800 " 
                         style={{
                         writingMode: 'vertical-rl', // Makes the text vertical
                         transform: 'rotate(180deg)', // Rotates the text for proper direction
@@ -190,16 +190,16 @@ function Landing () {
                         <div className=' p-3 pt-3 pb-6 mb-5 bg-white flex flex-col rounded-xl'>
                             <p className='flex justify-center'>{QuoteIcon}</p>
                             <p className='hover:scale-102 text-center font-black text-grey-900'>
-                            Life is short - let's make everyday count <br /> while we are still here
+                            Life is short - let's make everyday count <br /> while we are still here.
                             </p>
                         </div>
                         <p className='hover:scale-102 px-5'>
                         &nbsp;&nbsp;&nbsp;&nbsp; Hi! I'm Han Nguyen, a newbie but ambitious software engineer and full-stack developer who are working to build meaningful projects to connect people around the globe. 
                         </p>
                         <div className='flex flex-row justify-center mt-4 gap-4'>
-                          <a href='https://www.facebook.com/GiaHan14032006' className='p-1 rounded-lg' onClick={(e) => e.stopPropagation()} target="_blank" rel="noopener noreferrer" style={{backgroundColor: '#78A3C5'}}>{FaceBookIcon}</a>
-                          <a href='https://www.linkedin.com/in/xuangiahannguyen/' className='p-1 rounded-lg' onClick={(e) => e.stopPropagation()} target="_blank" rel="noopener noreferrer" style={{backgroundColor: '#78A3C5'}}>{LinkedInIcon}</a>
-                          <a href='https://github.com/XuanGiaHanNguyen' className='p-1 rounded-lg' onClick={(e) => e.stopPropagation()} target="_blank" rel="noopener noreferrer" style={{backgroundColor: '#78A3C5'}}>{GitHubIcon}</a>
+                          <a href='https://www.facebook.com/GiaHan14032006' className='p-1 rounded-lg hover:shadow-lg' onClick={(e) => e.stopPropagation()} target="_blank" rel="noopener noreferrer" style={{backgroundColor: '#78A3C5'}}>{FaceBookIcon}</a>
+                          <a href='https://www.linkedin.com/in/xuangiahannguyen/' className='p-1 rounded-lg hover:shadow-lg' onClick={(e) => e.stopPropagation()} target="_blank" rel="noopener noreferrer" style={{backgroundColor: '#78A3C5'}}>{LinkedInIcon}</a>
+                          <a href='https://github.com/XuanGiaHanNguyen' className='p-1 rounded-lg hover:shadow-lg' onClick={(e) => e.stopPropagation()} target="_blank" rel="noopener noreferrer" style={{backgroundColor: '#78A3C5'}}>{GitHubIcon}</a>
                         </div>
                     </div>
                     <div>
@@ -268,7 +268,7 @@ function Landing () {
                     </div>
                 </section>
 
-                <section id="Projects" className="mt-16 pb-14 pt-10" style={{backgroundColor: '#FFECCF'}}>
+                <section id="Projects" className="mt-16 pb-14 pt-10" style={{backgroundColor: '#fff5e6'}}>
                     <h2 className="text-5xl font-extrabold text-center mb-8" style={{color: '#626669'}}>
                         Recent Projects
                     </h2>
@@ -276,8 +276,8 @@ function Landing () {
         <div className="text-center flex flex-row rounded-xl bg-white hover:shadow-md hover:-translate-y-1 duration-400 ">
           <img src={CH} alt="Tide" width="200" height="140" className='rounded-l-xl' style={{ objectFit: 'cover' }}/>
           <div className='flex flex-col'>
-            <p className="pt-3 pb-1 px-8 text-lg font-bold">CastleHassle</p>
-            <p className='mx-4 text-sm font-medium'>Thrilling escape-castle themed game.</p>
+            <p className="pt-3 pb-1 px-8 text-lg font-bold text-gray-600">CastleHassle</p>
+            <p className='mx-4 text-sm font-bold text-gray-500'>Thrilling escape-castle themed game.</p>
             <div className='flex flex-row px-3 pt-3 pb-3 gap-2 align-center justify-center'>
               <div className='px-3 py-1 rounded-full text-sm font-bold text-white' style={{backgroundColor: '#78A3C5'}}>Python</div>
               <div className='px-3 py-1 rounded-full text-sm font-bold text-white' style={{backgroundColor: '#78A3C5'}}>Team-work</div>
@@ -289,8 +289,8 @@ function Landing () {
         <div className="text-center flex flex-row rounded-xl bg-white hover:shadow-md hover:-translate-y-1 duration-400 ">
           <img src={TT} alt="Tide" width="200" height="140" className='rounded-l-xl' style={{ objectFit: 'cover' }}/>
           <div className='flex flex-col'>
-            <p className="pt-3 pb-1 px-8 text-lg font-bold">ToastTutor</p>
-            <p className='mx-6 mb-3 text-sm font-medium'>Connecting tutors and students.</p>
+            <p className="pt-3 pb-1 px-8 text-lg font-bold text-gray-600">ToastTutor</p>
+            <p className='mx-6 mb-3 text-sm font-bold text-gray-500'>Connecting tutors and students.</p>
             <div className=''>
               <div className='flex flex-row px-3 pb-2 gap-2 align-center justify-center'>
                 <div className='px-3 py-1 rounded-full text-sm font-bold text-white' style={{backgroundColor: '#78A3C5'}}>Python</div>
@@ -310,8 +310,8 @@ function Landing () {
         <div className="text-center flex flex-row rounded-xl bg-white hover:shadow-md hover:-translate-y-1 duration-400 ">
           <img src={MM} alt="Tide" width="200" height="140" className='rounded-l-xl' style={{ objectFit: 'cover' }}/>
           <div className='flex flex-col'>
-            <p className="pt-3 pb-1 px-8 text-lg font-bold">MeowMentum</p>
-            <p className='mx-12 text-sm font-medium'>Your productivity bestfriend.</p>
+            <p className="pt-3 pb-1 px-8 text-lg font-bold text-gray-600">MeowMentum</p>
+            <p className='mx-12 text-sm font-bold text-gray-500'>Your productivity bestfriend.</p>
             <div className='flex flex-row px-3 pt-3 pb-3 gap-2 align-center justify-center'>
               <div className='px-3 py-1 rounded-full text-sm font-bold text-white' style={{backgroundColor: '#78A3C5'}}>JavaScript</div>
               <div className='px-3 py-1 rounded-full text-sm font-bold text-white' style={{backgroundColor: '#78A3C5'}}>HTML/CSS</div>
@@ -323,8 +323,8 @@ function Landing () {
         <div className="text-center flex flex-row rounded-xl bg-white hover:shadow-md hover:-translate-y-1 duration-400 ">
           <img src={car} alt="Tide" width="200" height="140" className='rounded-l-xl' style={{ objectFit: 'cover' }}/>
           <div className='flex flex-col'>
-            <p className="pt-3 pb-1 px-8 text-lg font-bold">Fennech The Car</p>
-            <p className='mx-9 text-sm font-medium'>Object-following Arduino Car</p>
+            <p className="pt-3 pb-1 px-8 text-lg font-bold text-gray-600">Fennech The Car</p>
+            <p className='mx-9 text-sm font-bold text-gray-500 '>Object-following Arduino Car</p>
             <div className='flex flex-row px-3 pt-3 pb-3 gap-2 align-center justify-center'>
               <div className='px-3 py-1 rounded-full text-sm font-bold text-white' style={{backgroundColor: '#78A3C5'}}>C++</div>
               <div className='px-3 py-1 rounded-full text-sm font-bold text-white' style={{backgroundColor: '#78A3C5'}}>Teamwork</div>
@@ -335,7 +335,8 @@ function Landing () {
       </div>
                 </section>
 
-                <section id="Technologies" className="mt-16 mb-24">
+                <section id="Technologies" className="mt-16 pb-20">
+                  <div className="mx-2 md:mx-16 py-9 px-10 text-lg font-semibold bg-white rounded-xl hover:-translate-y-1 hover:shadow transition  duration-400" style={{backgroundColor: '#e4edf2'}}>
                     <h2 className="text-5xl font-extrabold text-center text-gray-500">
                         Technologies
                     </h2>
@@ -344,7 +345,7 @@ function Landing () {
                       {showLeftButton && (
                         <button
                           onClick={() => handleScrollClick('left')}
-                          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 mx-16"
+                          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 mx-8"
                           aria-label="Scroll left"
                         >
                           <ChevronLeft className="w-6 h-6" />
@@ -355,7 +356,7 @@ function Landing () {
                       {showRightButton && (
                         <button
                           onClick={() => handleScrollClick('right')}
-                          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 mx-16"
+                          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 mx-8"
                           aria-label="Scroll right"
                         >
                           <ChevronRight className="w-6 h-6" />
@@ -365,7 +366,7 @@ function Landing () {
                       {/* Carousel Container */}
                       <div
                         ref={carouselRef}
-                        className="flex overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory gap-4 py-8 px-8 mx-20"
+                        className="flex overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory gap-4 py-8 px-8 mx-12"
                         style={{
                           msOverflowStyle: 'none',
                           scrollbarWidth: 'none',
@@ -374,7 +375,7 @@ function Landing () {
                         {techStack.map((tech, index) => (
                           <div
                             key={index}
-                            style={{backgroundColor: '#f0f0f0'}}
+                            style={{backgroundColor: '#fcfcfc'}}
                             className="flex-none w-40 snap-start px-6 py-4 bg-white rounded-xl hover:scale-105 hover:shadow-lg transition-all duration-200"
                           >
                             <img
@@ -382,10 +383,11 @@ function Landing () {
                               alt={`${tech.name} icon`}
                               className="w-32 h-32 object-contain"
                             />
-                            <p className="mt-2 font-bold text-lg text-center">{tech.name}</p>
+                            <p className="mt-2 font-bold text-lg text-gray-500 text-center">{tech.name}</p>
                           </div>
                         ))}
                       </div>
+                    </div>
                     </div>
                 </section>
         </div>

@@ -11,14 +11,14 @@ function Header() {
     <div className="w-full" style={{ margin: 0, padding: 0 }}> 
       {/* Navigation Bar */}
       <div
-        className="w-screen py-3 flex flex-row-reverse gap-5 pr-5 text-lg"
+        className="w-screen pt-3 pb-4 flex flex-row-reverse gap-8 pr-5 lex"
         style={{ backgroundColor: '#728099' }}
       >
         <button onClick={() => navigate("/")}>{MenuIcon}</button>
-        <button className="font-bold text-gray-100" onClick={() => navigate("/")}>Contact</button>
-        <button className="font-bold text-gray-100" onClick={() => navigate("/")}>Projects</button>
-        <button className="font-bold text-gray-100" onClick={() => navigate("/")}>Experience</button>
-        <button className="font-bold text-gray-100" onClick={() => navigate("/")}>Home</button>
+        <a className="font-bold text-gray-100 group" onClick={() => navigate("/")}>Contact <div class="bg-gray-100 h-[3px] w-0 group-hover:w-full transition-all duration-500"></div></a>
+        <a className="font-bold text-gray-100 group" onClick={() => navigate("/")}>Projects <div class="bg-gray-100 h-[3px] w-0 group-hover:w-full transition-all duration-500"></div></a>
+        <a className="font-bold text-gray-100 group" onClick={() => navigate("/")}>Experience <div class="bg-gray-100 h-[3px] w-0 group-hover:w-full transition-all duration-500"></div></a>
+        <a className="font-bold text-gray-100 group" onClick={() => navigate("/")}>Home <div class="bg-gray-100 h-[3px] w-0 group-hover:w-full transition-all duration-500"></div></a>
       </div>
 
       {/* Header Image */}
@@ -37,7 +37,6 @@ function Header() {
                 alt="Header"
                 style={{
                 width: "100%",
-                // height: "auto", // Maintains aspect ratio
                 }}
             />
     </div>
