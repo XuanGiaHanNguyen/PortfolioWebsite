@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import "../../index.css";
 import FooterPg from '../../assets/Contactme.png';
 
@@ -10,6 +9,7 @@ function Footer() {
     message: ''
   });
   const [status, setStatus] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,37 +22,45 @@ function Footer() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('sending');
+    setErrorMessage('');
 
     try {
+      // Check if server is reachable first
       const response = await fetch('http://localhost:5000/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          // Add CORS headers if needed
+          'Accept': 'application/json',
         },
-        body: JSON.stringify({
-          fullName: formData.fullName,
-          email: formData.email,
-          message: formData.message
-        })
+        credentials: 'include', // Include credentials if using sessions
+        body: JSON.stringify(formData)
       });
 
-      const data = await response.json();
-      
       if (response.ok) {
+        const data = await response.json();
         setStatus('success');
-        setFormData({ fullName: '', email: '', message: '' }); // Reset form
+        setFormData({ fullName: '', email: '', message: '' });
       } else {
+        const errorData = await response.json().catch(() => ({ message: 'Unknown error occurred' }));
         setStatus('error');
+        setErrorMessage(errorData.message || `Server error: ${response.status}`);
       }
     } catch (error) {
       console.error('Error:', error);
       setStatus('error');
+      setErrorMessage(
+        error.message === 'Failed to fetch'
+          ? 'Unable to connect to the server. Please check if the server is running.'
+          : 'An error occurred while sending your message. Please try again.'
+      );
     }
   };
 
   const handleReset = () => {
     setFormData({ fullName: '', email: '', message: '' });
     setStatus('');
+    setErrorMessage('');
   };
 
   return (
@@ -83,7 +91,7 @@ function Footer() {
 
           {status === 'error' && (
             <div className="mb-4 p-2 bg-red-100 text-red-700 rounded">
-              Failed to send message. Please try again later.
+              {errorMessage || 'Failed to send message. Please try again later.'}
             </div>
           )}
 
